@@ -1,4 +1,5 @@
-import os
+from textwrap import dedent
+
 from oidv4_toolkit.utils import *
 from oidv4_toolkit.downloader import *
 from oidv4_toolkit.show import *
@@ -6,6 +7,7 @@ from oidv4_toolkit.csv_downloader import *
 
 from oidv4_toolkit.utils import bcolors as bc
 
+# ------------------------------------------------------------------------------
 def bounding_boxes_images(args, DEFAULT_OID_DIR):
 
 	if not args.Dataset:
@@ -139,7 +141,6 @@ def bounding_boxes_images(args, DEFAULT_OID_DIR):
 							download(args, df_val, folder[i], dataset_dir, class_name, class_dict[class_name], class_list)
 						else:
 							download(args, df_val, folder[i], dataset_dir, class_name, class_dict[class_name], class_list, int(args.n_threads))
-
 
 	elif args.command == 'visualizer':
 
